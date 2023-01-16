@@ -4,7 +4,7 @@ function App() {
   const { isDesktop } = useMobile();
 
   const musicPlayerDefaultProps: MusicPlayerProps = {
-    trackImagePath: "src/assets/song-image.png",
+    trackImagePath: "song-image.png",
     trackName: "Maura",
     artistName: "Manoel Gomes",
     duration: 4000,
