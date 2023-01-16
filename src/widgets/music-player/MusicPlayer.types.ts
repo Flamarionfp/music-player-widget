@@ -1,4 +1,4 @@
-type Variant = "normal" | "compact";
+import { Variant } from "types";
 
 export type MusicPlayerProps = {
   variant?: Variant;

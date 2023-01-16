@@ -1,5 +1,7 @@
+import { Variant } from "types";
+
 export type TrackInfoProps = {
-  variant: "normal" | "compact";
+  variant: Variant;
   trackImagePath: string;
   trackName: string;
   artistName: string;

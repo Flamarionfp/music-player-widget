@@ -1,19 +1,27 @@
 import { PlayerControll, ProgressTracker, TrackInfo } from "components";
 import { MusicPlayerProps } from "./MusicPlayer.types";
 import { omit, pick } from "radash";
-import { NORMAL_VARIANT } from "constants";
-
+import { FULL_RESIZABLE, HORIZONTAL_RESIZABLE } from "constants";
 export const MusicPlayer = (props: MusicPlayerProps) => {
   const { variant = "normal" } = props;
 
   const trackInfoProps = omit(props, ["duration", "trackUrl"]);
   const progressTrackerProps = pick(props, ["duration"]);
 
-  const containerStyle =
-    variant === NORMAL_VARIANT ? "w-[357px] p-7" : "w-[266px] px-10 py-12";
+  function getContainerStyle() {
+    if (variant === HORIZONTAL_RESIZABLE) {
+      return "w-[357px] p-7 resize flex flex-col items-center justify-center";
+    } else if (variant === FULL_RESIZABLE) {
+      return "w-[266px] px-10 py-12 resize-x";
+    }
+
+    return "px-10 py-12";
+  }
 
   return (
-    <div className={`bg-primary-500 w-[266px] rounded-lg ${containerStyle}`}>
+    <div
+      className={`min-w-[266px] min-h-[266px] overflow-hidden bg-primary-500 rounded-lg ${getContainerStyle()}`}
+    >
       <TrackInfo variant={variant} {...trackInfoProps} />
       <section className="my-7">
         <PlayerControll isPlaying={false} />

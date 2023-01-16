@@ -11,7 +11,11 @@ function App() {
   return (
     <div className="bg-slate-500 h-screen w-screen flex justify-center items-center gap-6">
       <MusicPlayer {...musicPlayerDefaultProps} />
-      <MusicPlayer {...musicPlayerDefaultProps} variant="compact" />
+      <MusicPlayer {...musicPlayerDefaultProps} variant="full-resizable" />
+      <MusicPlayer
+        {...musicPlayerDefaultProps}
+        variant="horizontal-resizable"
+      />
     </div>
   );
 }

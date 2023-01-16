@@ -8,23 +8,32 @@ import { PlayerControllProps } from "./PlayerControll.types";
 export const PlayerControll = (props: PlayerControllProps) => {
   const { isPlaying } = props;
 
+  const buttons = [
+    {
+      id: "1",
+      icon: <PlayBack />,
+      title: "Ir para a faixa anterior",
+      onClick: () => null,
+    },
+    {
+      id: "2",
+      icon: isPlaying ? null : <Play />,
+      title: isPlaying ? "Pausar" : "Tocar",
+      onClick: () => null,
+    },
+    {
+      id: "3",
+      icon: <PlayForward />,
+      title: "Ir para a próxima faixa",
+      onClick: () => null,
+    },
+  ];
+
   return (
     <div className="flex justify-center items-center gap-12">
-      <IconButton
-        onClick={() => null}
-        icon={<PlayBack />}
-        title="Ir para a faixa anterior"
-      />
-      <IconButton
-        onClick={() => null}
-        icon={isPlaying ? null : <Play />}
-        title={isPlaying ? "Pausar" : "Tocar"}
-      />
-      <IconButton
-        onClick={() => null}
-        icon={<PlayForward />}
-        title="Ir para a próxima faixa"
-      />
+      {buttons.map((button) => (
+        <IconButton key={button.id} {...button} />
+      ))}
     </div>
   );
 };

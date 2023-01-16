@@ -1,2 +1,2 @@
-export const NORMAL_VARIANT = "normal";
-export const COMPACT_VARIANT = "compact";
+export const HORIZONTAL_RESIZABLE = "horizontal-resizable";
+export const FULL_RESIZABLE = "full-resizable";
