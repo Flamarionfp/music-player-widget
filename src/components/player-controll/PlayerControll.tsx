@@ -6,7 +6,7 @@ import { ReactComponent as PlayForward } from "../../assets/play-forward.svg";
 import { PlayerControllProps } from "./PlayerControll.types";
 
 export const PlayerControll = (props: PlayerControllProps) => {
-  const { isPlaying } = props;
+  const { isPlaying, onPlayClick = () => null } = props;
 
   const buttons = [
     {
@@ -19,7 +19,7 @@ export const PlayerControll = (props: PlayerControllProps) => {
       id: "2",
       icon: isPlaying ? null : <Play />,
       title: isPlaying ? "Pausar" : "Tocar",
-      onClick: () => null,
+      onClick: isPlaying ? () => null : onPlayClick,
     },
     {
       id: "3",

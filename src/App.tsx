@@ -1,5 +1,6 @@
-import { useMobile } from "hooks";
-import { MusicPlayer, MusicPlayerProps } from "widgets";
+import { useMobile } from "helpers/hooks";
+import { MusicPlayer } from "widgets";
+import { MusicPlayerProps } from "widgets/music-player/MusicPlayer.types";
 function App() {
   const { isDesktop } = useMobile();
 
@@ -8,7 +9,7 @@ function App() {
     trackName: "Maura",
     artistName: "Manoel Gomes",
     duration: 4000,
-    trackUrl: "#",
+    trackUrl: "http://edge.iono.fm/xice/162_medium.aac",
   };
 
   return (

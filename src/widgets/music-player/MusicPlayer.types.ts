@@ -8,3 +8,8 @@ export type MusicPlayerProps = {
   artistName: string;
   duration: number;
 };
+
+export interface MusicPlayerComponentProps extends MusicPlayerProps {
+  handlePlay: () => void;
+  handlePause: () => void;
+}

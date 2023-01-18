@@ -1,12 +1,20 @@
 import { PlayerControll, ProgressTracker, TrackInfo } from "components";
-import { MusicPlayerProps } from "./MusicPlayer.types";
-import { omit, pick } from "radash";
+import { MusicPlayerComponentProps } from "./MusicPlayer.types";
+import { omit } from "radash";
 import { FULL_RESIZABLE, HORIZONTAL_RESIZABLE } from "constants";
-export const MusicPlayer = (props: MusicPlayerProps) => {
-  const { variant = "normal" } = props;
+export const MusicPlayerComponent = (props: MusicPlayerComponentProps) => {
+  const { variant = "normal", duration, handlePlay = () => null } = props;
 
-  const trackInfoProps = omit(props, ["duration", "trackUrl"]);
-  const progressTrackerProps = pick(props, ["duration"]);
+  const trackInfoProps = omit(props, [
+    "duration",
+    "trackUrl",
+    "handlePlay",
+    "handlePause",
+  ]);
+
+  const progressTrackerProps = {
+    duration,
+  };
 
   function getContainerStyle() {
     if (variant === HORIZONTAL_RESIZABLE) {
@@ -24,7 +32,7 @@ export const MusicPlayer = (props: MusicPlayerProps) => {
     >
       <TrackInfo variant={variant} {...trackInfoProps} />
       <section className="my-7">
-        <PlayerControll isPlaying={false} />
+        <PlayerControll onPlayClick={handlePlay} isPlaying={false} />
       </section>
       <ProgressTracker {...progressTrackerProps} />
     </div>
