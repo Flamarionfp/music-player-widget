@@ -7,11 +7,15 @@ export default {
   title: 'widgets/MusicPlayerComponentProps',
   component: MusicPlayerComponent,
   args: {
+    color: '#2A2141',
     trackImagePath: 'song-image.png',
     trackName: 'Maura',
     artistName: 'Manoel Gomes',
     duration: 4000,
     trackUrl: 'http://edge.iono.fm/xice/162_medium.aac',
+  },
+  argTypes: {
+    color: { control: 'color' },
   },
 } as Meta<MusicPlayerComponentProps>;
 

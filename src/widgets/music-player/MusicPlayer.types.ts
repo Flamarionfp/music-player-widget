@@ -1,6 +1,7 @@
 import { Variant } from 'types';
 
 export type MusicPlayerProps = {
+  color?: string;
   variant?: Variant;
   trackImagePath: string;
   trackUrl: string;
