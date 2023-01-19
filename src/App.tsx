@@ -1,4 +1,4 @@
-import { useMobile } from "helpers/hooks";
+import { useMobile } from "hooks";
 import { MusicPlayer } from "widgets";
 import { MusicPlayerProps } from "widgets/music-player/MusicPlayer.types";
 function App() {

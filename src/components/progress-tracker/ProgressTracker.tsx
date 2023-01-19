@@ -1,4 +1,3 @@
-import { HORIZONTAL_RESIZABLE } from "constants";
 import React from "react";
 import { ProgressTrackerProps } from "./ProgressTracker.types";
 

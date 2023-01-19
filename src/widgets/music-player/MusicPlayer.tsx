@@ -1,7 +1,7 @@
 import { PlayerControll, ProgressTracker, TrackInfo } from "components";
 import { MusicPlayerComponentProps } from "./MusicPlayer.types";
 import { omit } from "radash";
-import { FULL_RESIZABLE, HORIZONTAL_RESIZABLE } from "constants";
+
 export const MusicPlayerComponent = (props: MusicPlayerComponentProps) => {
   const { variant = "normal", duration, handlePlay = () => null } = props;
 
@@ -17,9 +17,9 @@ export const MusicPlayerComponent = (props: MusicPlayerComponentProps) => {
   };
 
   function getContainerStyle() {
-    if (variant === HORIZONTAL_RESIZABLE) {
+    if (variant === "horizontal-resizable") {
       return "w-[357px] p-7 resize flex flex-col items-center justify-center";
-    } else if (variant === FULL_RESIZABLE) {
+    } else if (variant === "full-resizable") {
       return "w-[266px] px-10 py-12 resize-x";
     }
 

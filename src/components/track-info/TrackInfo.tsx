@@ -1,4 +1,3 @@
-import { FULL_RESIZABLE } from "constants";
 import { truncate } from "helpers";
 import { TrackInfoProps } from "./TrackInfo.types";
 
@@ -7,10 +6,10 @@ export const TrackInfo = (props: TrackInfoProps) => {
 
   const trackImageAlt = `${trackName} de ${artistName}`;
 
-  const containerStyle = variant === FULL_RESIZABLE && "flex-col";
+  const containerStyle = variant === "full-resizable" && "flex-col";
 
   function getImageStyle() {
-    if (variant === FULL_RESIZABLE) {
+    if (variant === "full-resizable") {
       return "w-full h-[190px] object-contain hover:scale-90 transition duration-500";
     }
 
