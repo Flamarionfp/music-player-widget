@@ -1,1 +1,1 @@
-export type Variant = "normal" | "horizontal-resizable" | "full-resizable";
+export type Variant = 'normal' | 'horizontal-resizable' | 'full-resizable';

@@ -1,13 +1,13 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { PlayerControll } from "./PlayerControll";
-import { PlayerControllProps } from "./PlayerControll.types";
+import { Meta, StoryObj } from '@storybook/react';
+import { PlayerControll } from './PlayerControll';
+import { PlayerControllProps } from './PlayerControll.types';
 
 export default {
-  title: "components/PlayerControll",
+  title: 'components/PlayerControll',
   component: PlayerControll,
   args: {
     isPlaying: false,
-    onPlayClick: () => {},
+    onPlayClick: () => null,
   },
 } as Meta<PlayerControllProps>;
 

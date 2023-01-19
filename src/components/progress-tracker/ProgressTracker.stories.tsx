@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { ProgressTracker } from "./ProgressTracker";
-import { ProgressTrackerProps } from "./ProgressTracker.types";
+import { Meta, StoryObj } from '@storybook/react';
+import { ProgressTracker } from './ProgressTracker';
+import { ProgressTrackerProps } from './ProgressTracker.types';
 
 export default {
-  title: "components/ProgressTracker",
+  title: 'components/ProgressTracker',
   component: ProgressTracker,
   args: {
     duration: 3000,

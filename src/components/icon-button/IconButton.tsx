@@ -1,4 +1,4 @@
-import { IconButtonProps } from "./IconButton.types";
+import { IconButtonProps } from './IconButton.types';
 
 export const IconButton = (props: IconButtonProps) => {
   const { icon } = props;

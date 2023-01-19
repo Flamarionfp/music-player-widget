@@ -1,19 +1,19 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from 'react';
 
 export const usePlayer = (trackUrl: string) => {
-  const audio = new Audio(trackUrl);
+  const audio = useMemo(() => {
+    return new Audio(trackUrl);
+  }, [trackUrl]);
 
   const play = useCallback(() => {
-    if (audio.canPlayType("audio/aac")) {
+    if (audio.canPlayType('audio/aac')) {
       audio.play();
     }
-
-    audio.play();
-  }, []);
+  }, [audio]);
 
   const pause = useCallback(() => {
     audio.pause();
-  }, []);
+  }, [audio]);
 
   return {
     play,

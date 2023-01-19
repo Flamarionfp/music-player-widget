@@ -1,7 +1,6 @@
-import React from "react";
-import { ProgressTrackerProps } from "./ProgressTracker.types";
+import React from 'react';
 
-export const ProgressTracker = (props: ProgressTrackerProps) => {
+export const ProgressTracker = () => {
   return (
     <React.Fragment>
       <div className="w-full bg-gray-200 rounded-full h-1.5">
