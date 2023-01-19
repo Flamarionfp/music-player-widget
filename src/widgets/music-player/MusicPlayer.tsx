@@ -2,7 +2,7 @@ import { PlayerControll, ProgressTracker, TrackInfo } from 'components';
 import { MusicPlayerComponentProps } from './MusicPlayer.types';
 import { omit } from 'radash';
 export const MusicPlayerComponent = (props: MusicPlayerComponentProps) => {
-  const { variant = 'normal', color, handlePlay = () => null } = props;
+  const { variant = 'normal', color, additionalStyles = '', handlePlay = () => null } = props;
 
   const trackInfoProps = omit(props, ['duration', 'trackUrl', 'handlePlay', 'handlePause']);
 
@@ -19,7 +19,7 @@ export const MusicPlayerComponent = (props: MusicPlayerComponentProps) => {
   return (
     <div
       style={{ backgroundColor: color }}
-      className={`min-w-[266px] min-h-[266px] overflow-hidden rounded-lg ${getContainerStyle()}`}
+      className={`min-w-[266px] min-h-[266px] overflow-hidden rounded-lg ${getContainerStyle()} ${additionalStyles}`}
     >
       <TrackInfo variant={variant} {...trackInfoProps} />
       <section className="my-7">

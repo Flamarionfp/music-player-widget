@@ -8,6 +8,7 @@ export type MusicPlayerProps = {
   trackName: string;
   artistName: string;
   duration: number;
+  additionalStyles?: string;
 };
 
 export interface MusicPlayerComponentProps extends MusicPlayerProps {
